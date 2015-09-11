@@ -1,0 +1,16 @@
+html, body, view {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Helvetica Neue';
+    color: black;
+    font-weight: 200;
+    background: white;
+    font-size: 36px;
+}

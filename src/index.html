@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Knockout Try-Out</title>
+
+	<styleincludes/>
+	<scriptincludes/>
+</head>
+<body onload="onDeviceReady()">
+	<script type="text/javascript">
+        var onDeviceReady = function() {
+            new app.Bootstrapper();
+        };
+    </script>
+	<greeter data-bind="click: changeColor"> Welcome the trying out..</greeter>
+	<button data-bind="click: changeColor">Welcome </button>
+</body>
+
+
+</html>

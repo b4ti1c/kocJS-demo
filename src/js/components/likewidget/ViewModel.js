@@ -1,19 +1,35 @@
 goog.provide('mf.components.LikeWidget.ViewModel');
+goog.require('mf.base.ViewModel');
 
 
 
 /**
  * @constructor
- *
+ * @extends {mf.base.ViewModel}
+ * 
  * @param {Object=} params [description]
  */
 mf.components.LikeWidget.ViewModel = function(params){
     this.chosenValue = params ? params.value : null;
 
-	ko.exportProperty(this, 'chosenValue', this.chosenValue);
-	ko.exportProperty(this, 'like', this.like);
-	ko.exportProperty(this, 'dislike', this.dislike);
+    this.exports = [
+    	{
+    		ref: 'chosenValue', 
+    		obj: this.chosenValue
+    	},
+    	{
+    		ref: 'like', 
+    		obj: this.like
+    	},
+    	{
+    		ref: 'dislike', 
+    		obj: this.dislike
+    	}
+    ];
+
+	goog.base(this);
 };
+goog.inherits(mf.components.LikeWidget.ViewModel, mf.base.ViewModel);
 
 
 mf.components.LikeWidget.ViewModel.prototype.like = function() { 

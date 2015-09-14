@@ -163,6 +163,11 @@ module.exports = function(grunt) {
                 {src: 'build/deps.js', dest: 'dist/deps.js'}
             ]
         },
+        resources: {
+            files: [
+                {expand: true, cwd: 'src/', src:'rsc/**/*', dest: 'dist/'}
+            ]
+        }
     };
 
     config.symlink = {
@@ -191,7 +196,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['build']);
 
 
-    grunt.registerTask('production', ['clean:dist', 'mkdir:all', 'newer:closureBuilder', 'newer:uglify', 'concat:js', 'concat:css', 'combine:prod']);
+    grunt.registerTask('production', ['clean:dist', 'mkdir:all', 'newer:closureBuilder', 'newer:uglify', 'concat:js', 'concat:css', 'copy:resources', 'combine:prod']);
 
     grunt.registerTask('test', ['clean:dist', 'mkdir:all', 'newer:closureDepsWriter', 'newer:uglify', 'copy:lib', 'copy:jsdeps', 'symlink', 'combine:test']);
 };

@@ -1,5 +1,5 @@
-goog.provide('app.ui.MainViewModel');
-goog.require('app.entities.Product');
+goog.provide('mf.ui.MainViewModel');
+goog.require('mf.entities.Product');
 
 
 
@@ -7,11 +7,11 @@ goog.require('app.entities.Product');
  * @constructor
  *
  */
-app.ui.MainViewModel = function(){
+mf.ui.MainViewModel = function(){
 	this.products = [
-	        new app.entities.Product('Garlic bread'),
-	        new app.entities.Product('Pain au chocolat'),
-	        new app.entities.Product('Seagull spaghetti', 'like') // This one was already 'liked'
+	        new mf.entities.Product('Garlic bread'),
+	        new mf.entities.Product('Pain au chocolat'),
+	        new mf.entities.Product('Seagull spaghetti', 'like') // This one was already 'liked'
 	    ];
 
 	ko.exportProperty(this, 'products', this.products);  

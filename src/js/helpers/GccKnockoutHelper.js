@@ -1,4 +1,4 @@
-goog.provide('app.helpers.GccKnockoutHelper');
+goog.provide('mf.helpers.GccKnockoutHelper');
 
 
  

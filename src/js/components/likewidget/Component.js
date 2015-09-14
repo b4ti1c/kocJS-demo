@@ -1,6 +1,6 @@
-goog.provide('app.components.LikeWidget.Component');
-goog.require('app.components.LikeWidget.ViewModel');
-goog.require('app.components.LikeWidget.Template');
+goog.provide('mf.components.LikeWidget.Component');
+goog.require('mf.components.LikeWidget.ViewModel');
+goog.require('mf.components.LikeWidget.Template');
 
  
 
@@ -8,8 +8,8 @@ goog.require('app.components.LikeWidget.Template');
  * @constructor
  * 
  */
-app.components.LikeWidget.Component = function(){
+mf.components.LikeWidget.Component = function(){
 	this.name = 'like-widget';
-	this.viewModel = app.components.LikeWidget.ViewModel;
-	this.template = (new app.components.LikeWidget.Template()).templates_base();
+	this.viewModel = mf.components.LikeWidget.ViewModel;
+	this.template = (new mf.components.LikeWidget.Template()).templates_base();
 };

@@ -1,7 +1,7 @@
-goog.provide('app.Application');
-goog.require('app.helpers.GccKnockoutHelper');
-goog.require('app.managers.ComponentRegistrationManager');
-goog.require('app.ui.MainViewModel');
+goog.provide('mf.Application');
+goog.require('mf.helpers.GccKnockoutHelper');
+goog.require('mf.managers.ComponentRegistrationManager');
+goog.require('mf.ui.MainViewModel');
 
 
 
@@ -10,28 +10,8 @@ goog.require('app.ui.MainViewModel');
  *
  * @constructor
  */
-app.Application = function() {
-	app.managers.ComponentRegistrationManager.getInstance();
-
-	/**
-	 * 
-	 * @constructor
-	 *
-	 * @param {string} name [description]
-	 * @param {string=} rating [description]
-	 */
-	var Product = function(name, rating) {
-	    this.name = name;
-	    this.userRating = ko.observable(rating || null);
-
-
-		ko.exportProperty(this, 'name', this.name);
-		ko.exportProperty(this, 'userRating', this.userRating);
-	}
- 
- 	
-
-	 
-	ko.applyBindings(new app.ui.MainViewModel());
+mf.Application = function() {
+	mf.managers.ComponentRegistrationManager.getInstance();	 
+	ko.applyBindings(new mf.ui.MainViewModel());
 };
-goog.addSingletonGetter(app.Application);
+goog.addSingletonGetter(mf.Application);

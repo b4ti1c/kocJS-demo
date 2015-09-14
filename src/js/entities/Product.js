@@ -1,4 +1,4 @@
-goog.provide('app.entities.Product');
+goog.provide('mf.entities.Product');
 
 
 
@@ -9,7 +9,7 @@ goog.provide('app.entities.Product');
  * @param {string} name [description]
  * @param {string=} rating [description]
  */
-app.entities.Product = function(name, rating) {
+mf.entities.Product = function(name, rating) {
     this.name = name;
     this.userRating = ko.observable(rating || null);
 

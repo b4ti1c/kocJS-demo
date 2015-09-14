@@ -1,4 +1,4 @@
-goog.provide('app.components.LikeWidget.ViewModel');
+goog.provide('mf.components.LikeWidget.ViewModel');
 
 
 
@@ -7,7 +7,7 @@ goog.provide('app.components.LikeWidget.ViewModel');
  *
  * @param {Object=} params [description]
  */
-app.components.LikeWidget.ViewModel = function(params){
+mf.components.LikeWidget.ViewModel = function(params){
     this.chosenValue = params ? params.value : null;
 
 	ko.exportProperty(this, 'chosenValue', this.chosenValue);
@@ -16,11 +16,11 @@ app.components.LikeWidget.ViewModel = function(params){
 };
 
 
-app.components.LikeWidget.ViewModel.prototype.like = function() { 
+mf.components.LikeWidget.ViewModel.prototype.like = function() { 
 	this.chosenValue('like'); 
 };
 
 
-app.components.LikeWidget.ViewModel.prototype.dislike = function() { 
+mf.components.LikeWidget.ViewModel.prototype.dislike = function() { 
 	this.chosenValue('dislike'); 
 };

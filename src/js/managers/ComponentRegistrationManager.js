@@ -1,19 +1,18 @@
-goog.provide('app.managers.ComponentRegistrationManager');
-goog.require('app.components.LikeWidget.Component');
+goog.provide('mf.managers.ComponentRegistrationManager');
+goog.require('mf.components.LikeWidget.Component');
 
 
 /**
  * @constructor
  * 
  */
-app.managers.ComponentRegistrationManager = function(){
-
-	this.register(new app.components.LikeWidget.Component());
+mf.managers.ComponentRegistrationManager = function(){
+	this.register(new mf.components.LikeWidget.Component());
 };
-goog.addSingletonGetter(app.managers.ComponentRegistrationManager);
+goog.addSingletonGetter(mf.managers.ComponentRegistrationManager);
 
 
-app.managers.ComponentRegistrationManager.prototype.register = function(component){
+mf.managers.ComponentRegistrationManager.prototype.register = function(component){
 	ko.components.register(component.name, {
 		'viewModel': component.viewModel,
 		'template': component.template

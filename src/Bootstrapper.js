@@ -1,5 +1,5 @@
-goog.provide('app.Bootstrapper');
-goog.require('app.Application');
+goog.provide('mf.Bootstrapper');
+goog.require('mf.Application');
 
 
 
@@ -11,6 +11,6 @@ goog.require('app.Application');
  * Bootstrapper class includes things to do on startup.
  * @constructor
  */
-app.Bootstrapper = function(){
-	app.Application.getInstance();
+mf.Bootstrapper = function(){
+	mf.Application.getInstance();
 };  

@@ -1,6 +1,7 @@
 goog.provide('app.Application');
 goog.require('app.helpers.GccKnockoutHelper');
 goog.require('app.managers.ComponentRegistrationManager');
+goog.require('app.ui.MainViewModel');
 
 
 
@@ -28,22 +29,9 @@ app.Application = function() {
 		ko.exportProperty(this, 'userRating', this.userRating);
 	}
  
- 	/**
-	 * 
-	 * @constructor
-	 */
-    var MyViewModel = function() {
-	    this.products = [
-	        new Product('Garlic bread'),
-	        new Product('Pain au chocolat'),
-	        new Product('Seagull spaghetti', 'like') // This one was already 'liked'
-	    ];
-
-
-		ko.exportProperty(this, 'products', this.products);
-	}
+ 	
 
 	 
-	ko.applyBindings(new MyViewModel());
+	ko.applyBindings(new app.ui.MainViewModel());
 };
 goog.addSingletonGetter(app.Application);

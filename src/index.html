@@ -14,8 +14,16 @@
             new app.Bootstrapper();
         };
     </script>
-	<greeter data-bind="click: changeColor"> Welcome the trying out..</greeter>
+	<!--greeter data-bind="click: changeColor"> Welcome the trying out..</greeter>
 	<button data-bind="click: changeColor">Welcome </button>
+	<like-widget params="value: ko.observable(null)"></like-widget>
+
+	<ul data-bind="foreach: products">
+	    <li class="product">
+	        <strong data-bind="text: name"></strong>
+	        <like-widget params="value: userRating"></like-widget>
+	    </li>
+	</ul>
 </body>
 
 

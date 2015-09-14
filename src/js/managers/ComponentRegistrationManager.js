@@ -14,7 +14,6 @@ goog.addSingletonGetter(app.managers.ComponentRegistrationManager);
 
 
 app.managers.ComponentRegistrationManager.prototype.register = function(component){
-	console.dir(component)
 	ko.components.register(component.name, {
 		'viewModel': component.viewModel,
 		'template': component.template

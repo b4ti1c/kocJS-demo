@@ -1,7 +1,6 @@
 goog.provide('app.Application');
 goog.require('app.helpers.GccKnockoutHelper');
-goog.require('app.views.TryoutViewModel');
-goog.require('app.components.LikeWidget.Component');
+goog.require('app.managers.ComponentRegistrationManager');
 
 
 
@@ -11,8 +10,7 @@ goog.require('app.components.LikeWidget.Component');
  * @constructor
  */
 app.Application = function() {
-	app.components.LikeWidget.Component.getInstance();
-	var that = this;
+	app.managers.ComponentRegistrationManager.getInstance();
 
 	/**
 	 * 

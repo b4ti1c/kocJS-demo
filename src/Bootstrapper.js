@@ -1,5 +1,7 @@
 goog.provide('mf.Bootstrapper');
 goog.require('mf.Application');
+goog.require('goog.debug.ErrorHandler');
+goog.require('goog.events.EventHandler');
 
 
 

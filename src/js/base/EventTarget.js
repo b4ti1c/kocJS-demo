@@ -41,5 +41,14 @@ mf.base.EventTarget.prototype.bindDOMEvents = function() {
 mf.base.EventTarget.prototype.export = function(){
 	this.exports.forEach(function(item){
 		ko.exportProperty(this, item.ref, item.obj);
+		console.log('exported ' + item.ref);
 	}, this);
+};
+
+
+/**
+ * @override
+ */
+mf.base.EventTarget.prototype.disposeInternal = function(){
+    goog.base(this, 'disposeInternal');
 };

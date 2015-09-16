@@ -1,6 +1,6 @@
 goog.provide('mf.MainViewModel');
 goog.require('mf.base.ViewModel');
-goog.require('mf.entities.Product');
+goog.require('mf.models.Product');
 goog.require('mf.managers.ViewManager');
 goog.require('mf.views.ProductList.View');
 
@@ -12,9 +12,9 @@ goog.require('mf.views.ProductList.View');
  */
 mf.MainViewModel = function(){
 	this.products = ko.observableArray([
-        new mf.entities.Product('Garlic bread'),
-        new mf.entities.Product('Pain au chocolat'),
-        new mf.entities.Product('Seagull spaghetti', 'like') // This one was already 'liked'
+        new mf.models.Product('Garlic bread'),
+        new mf.models.Product('Pain au chocolat'),
+        new mf.models.Product('Seagull spaghetti', 'like') // This one was already 'liked'
     ]);
 
 	this.productListView = mf.vf.createView(this, new mf.views.ProductList.View(this.products));
@@ -47,7 +47,7 @@ mf.MainViewModel.prototype.bindModelEvents = function(){
 	this.listeners = [];
 	this.listeners.push(goog.events.listen(this, mf.components.LikeWidget.ViewModel.EventType.GOOD_DECISION, function(){
 		window.alert('I like');
-		this.products.push(new mf.entities.Product('Hellim'));
+		this.products.push(new mf.models.Product('Hellim'));
 	}, false, this));
 
 	this.listeners.push(goog.events.listen(this, mf.components.LikeWidget.ViewModel.EventType.BAD_DECISION, function(){

@@ -1,4 +1,4 @@
-goog.provide('mf.base.Entity');
+goog.provide('mf.base.Model');
 goog.require('mf.base.EventTarget');
 
 
@@ -7,7 +7,7 @@ goog.require('mf.base.EventTarget');
  * @constructor
  * @extends {mf.base.EventTarget}
  */
-mf.base.Entity = function(){
+mf.base.Model = function(){
 	goog.base(this);
 };
-goog.inherits(mf.base.Entity, mf.base.EventTarget);
+goog.inherits(mf.base.Model, mf.base.EventTarget);

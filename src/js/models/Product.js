@@ -1,17 +1,17 @@
-goog.provide('mf.entities.Product');
-goog.require('mf.base.Entity');
+goog.provide('mf.models.Product');
+goog.require('mf.base.Model');
 
 
 
 /**
  * 
  * @constructor
- * @extends {mf.base.Entity}
+ * @extends {mf.base.Model}
  *
  * @param {string} name [description]
  * @param {string=} rating [description]
  */
-mf.entities.Product = function(name, rating) {
+mf.models.Product = function(name, rating) {
     this.name = name;
     this.userRating = ko.observable(rating || null);
 
@@ -21,4 +21,4 @@ mf.entities.Product = function(name, rating) {
 	
 	goog.base(this);
 };
-goog.inherits(mf.entities.Product, mf.base.Entity);
+goog.inherits(mf.models.Product, mf.base.Model);

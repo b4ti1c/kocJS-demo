@@ -41,7 +41,6 @@ app.base.EventTarget.prototype.bindDOMEvents = function() {
 app.base.EventTarget.prototype.export = function(){
 	this.exports.forEach(function(item){
 		ko.exportProperty(this, item.ref, item.obj);
-		console.log('exported ' + item.ref);
 	}, this);
 };
 

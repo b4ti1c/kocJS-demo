@@ -1,9 +1,9 @@
-goog.provide('mf.Application');
-goog.require('mf.helpers.GccKnockoutHelper');
-goog.require('mf.managers.ComponentRegistrationManager');
-goog.require('mf.managers.ViewManager');
-goog.require('mf.factories.ViewFactory');
-goog.require('mf.MainViewModel');
+goog.provide('app.Application');
+goog.require('app.helpers.GccKnockoutHelper');
+goog.require('app.managers.ComponentRegistrationManager');
+goog.require('app.managers.ViewManager');
+goog.require('app.factories.ViewFactory');
+goog.require('app.MainViewModel');
 
 
 
@@ -12,11 +12,11 @@ goog.require('mf.MainViewModel');
  *
  * @constructor
  */
-mf.Application = function() {
-	mf.vf = mf.factories.ViewFactory.getInstance();
-	mf.vm = mf.managers.ViewManager.getInstance();
-	
-	mf.crm = mf.managers.ComponentRegistrationManager.getInstance();	 
-	ko.applyBindings(new mf.MainViewModel());
+app.Application = function() {
+	app.vf = app.factories.ViewFactory.getInstance();
+	app.vm = app.managers.ViewManager.getInstance();
+
+	app.crm = app.managers.ComponentRegistrationManager.getInstance();	 
+	ko.applyBindings(new app.MainViewModel());
 };
-goog.addSingletonGetter(mf.Application);
+goog.addSingletonGetter(app.Application);

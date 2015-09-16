@@ -1,15 +1,15 @@
-goog.provide('mf.components.LikeWidget.ViewModel');
-goog.require('mf.base.ViewModel');
+goog.provide('app.components.LikeWidget.ViewModel');
+goog.require('app.base.ViewModel');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.ViewModel}
+ * @extends {app.base.ViewModel}
  * 
  * @param {Object=} params [description]
  */
-mf.components.LikeWidget.ViewModel = function(params){
+app.components.LikeWidget.ViewModel = function(params){
     this.parent = params['parent'];
 
     this.chosenValue = params ? params['value'] : null;
@@ -31,18 +31,18 @@ mf.components.LikeWidget.ViewModel = function(params){
 
 	goog.base(this);
 };
-goog.inherits(mf.components.LikeWidget.ViewModel, mf.base.ViewModel);
+goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
 
 
-mf.components.LikeWidget.ViewModel.prototype.like = function() { 
+app.components.LikeWidget.ViewModel.prototype.like = function() { 
 	this.chosenValue('like'); 
-    this.dispatchEvent(mf.components.LikeWidget.ViewModel.EventType.GOOD_DECISION);
+    this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.GOOD_DECISION);
 };
 
 
-mf.components.LikeWidget.ViewModel.prototype.dislike = function() { 
+app.components.LikeWidget.ViewModel.prototype.dislike = function() { 
 	this.chosenValue('dislike'); 
-    this.dispatchEvent(mf.components.LikeWidget.ViewModel.EventType.BAD_DECISION);
+    this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.BAD_DECISION);
 };
 
 
@@ -50,7 +50,7 @@ mf.components.LikeWidget.ViewModel.prototype.dislike = function() {
  * 
  * @enum {string}
  */
-mf.components.LikeWidget.ViewModel.EventType = {
+app.components.LikeWidget.ViewModel.EventType = {
     GOOD_DECISION: 'helikes',
     BAD_DECISION: 'hehates'
 };

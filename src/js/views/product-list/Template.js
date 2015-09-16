@@ -1,24 +1,24 @@
-goog.provide('mf.views.ProductList.Template');
-goog.require('mf.base.Template');
+goog.provide('app.views.ProductList.Template');
+goog.require('app.base.Template');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.Template}
+ * @extends {app.base.Template}
  * 
  */
-mf.views.ProductList.Template = function(){
+app.views.ProductList.Template = function(){
 	goog.base(this);
 };
-goog.inherits(mf.views.ProductList.Template, mf.base.Template);
+goog.inherits(app.views.ProductList.Template, app.base.Template);
 
 
 /**
  * 
  * @override
  */
-mf.views.ProductList.Template.prototype.templates_base = function(){
+app.views.ProductList.Template.prototype.templates_base = function(){
 	return '<ul data-bind="foreach: products">\
 			    <li class="product">\
 			        <strong data-bind="text: name"></strong>\

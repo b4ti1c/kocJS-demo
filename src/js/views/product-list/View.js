@@ -1,16 +1,16 @@
-goog.provide('mf.views.ProductList.View');
-goog.require('mf.base.View');
-goog.require('mf.views.ProductList.Template');
+goog.provide('app.views.ProductList.View');
+goog.require('app.base.View');
+goog.require('app.views.ProductList.Template');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.View}
+ * @extends {app.base.View}
  *
  * @param {Object} products [description]
  */
-mf.views.ProductList.View = function(products){
+app.views.ProductList.View = function(products){
 	this.products = products;
 
 	this.exports = [{
@@ -20,17 +20,17 @@ mf.views.ProductList.View = function(products){
 
 	goog.base(this);
 };
-goog.inherits(mf.views.ProductList.View, mf.base.View);
+goog.inherits(app.views.ProductList.View, app.base.View);
 
 
 /**
  * @override
  */
-mf.views.ProductList.View.prototype.name = 'productlist-view';
+app.views.ProductList.View.prototype.name = 'productlist-view';
 
 
 
 /**
  * @override
  */
-mf.views.ProductList.View.prototype.template = (new mf.views.ProductList.Template()).template;
+app.views.ProductList.View.prototype.template = (new app.views.ProductList.Template()).template;

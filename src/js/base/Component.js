@@ -1,34 +1,34 @@
-goog.provide('mf.base.Component');
-goog.require('mf.base.EventTarget');
+goog.provide('app.base.Component');
+goog.require('app.base.EventTarget');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.EventTarget}
+ * @extends {app.base.EventTarget}
  */
-mf.base.Component = function() {
+app.base.Component = function() {
     goog.base(this);
 };
-goog.inherits(mf.base.Component, mf.base.EventTarget);
+goog.inherits(app.base.Component, app.base.EventTarget);
 
 
 /**
  * The name of the element in DOM and should be overriden by the implementer
  * @protected
  */
-mf.base.Component.prototype.name = 'mf-default';
+app.base.Component.prototype.name = 'mf-default';
 
 
 /**
  * ViewModel that will represent the element in DOM. Should be overriden by the implementer
  * @protected
  */
-mf.base.Component.prototype.viewModel = mf.base.ViewModel;
+app.base.Component.prototype.viewModel = app.base.ViewModel;
 
 
 /**
  * The template (captured in a string). It should be overriden by the implementer's template.
  * @protected
  */
-mf.base.Component.prototype.template = '<mf-default></mf-default>';
+app.base.Component.prototype.template = '<mf-default></mf-default>';

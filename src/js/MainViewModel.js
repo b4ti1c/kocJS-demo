@@ -1,28 +1,28 @@
-goog.provide('mf.MainViewModel');
-goog.require('mf.base.ViewModel');
-goog.require('mf.models.Product');
-goog.require('mf.managers.ViewManager');
-goog.require('mf.views.ProductList.View');
+goog.provide('app.MainViewModel');
+goog.require('app.base.ViewModel');
+goog.require('app.models.Product');
+goog.require('app.managers.ViewManager');
+goog.require('app.views.ProductList.View');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.ViewModel}
+ * @extends {app.base.ViewModel}
  */
-mf.MainViewModel = function(){
+app.MainViewModel = function(){
 	this.products = ko.observableArray([
-        new mf.models.Product('Garlic bread'),
-        new mf.models.Product('Pain au chocolat'),
-        new mf.models.Product('Seagull spaghetti', 'like') // This one was already 'liked'
+        new app.models.Product('Garlic bread'),
+        new app.models.Product('Pain au chocolat'),
+        new app.models.Product('Seagull spaghetti', 'like') // This one was already 'liked'
     ]);
 
-	this.productListView = mf.vf.createView(this, new mf.views.ProductList.View(this.products));
+	this.productListView = app.vf.createView(this, new app.views.ProductList.View(this.products));
 
-	mf.vm.addTemplate(this.productListView);
-	mf.vm.prepareTemplateEngine();
+	app.vm.addTemplate(this.productListView);
+	app.vm.prepareTemplateEngine();
 
-	mf.vm.switchToView(this.productListView);
+	app.vm.switchToView(this.productListView);
 
 	this.exports = [];
 	this.exports.push({
@@ -31,26 +31,26 @@ mf.MainViewModel = function(){
 	});
 	this.exports.push({
 		ref: 'vm',
-		obj: mf.vm
+		obj: app.vm
 	});
 
 	goog.base(this);
 };
-goog.inherits(mf.MainViewModel, mf.base.ViewModel);
+goog.inherits(app.MainViewModel, app.base.ViewModel);
 
 
 /**
  * 
  * @override
  */
-mf.MainViewModel.prototype.bindModelEvents = function(){	
+app.MainViewModel.prototype.bindModelEvents = function(){	
 	this.listeners = [];
-	this.listeners.push(goog.events.listen(this, mf.components.LikeWidget.ViewModel.EventType.GOOD_DECISION, function(){
+	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.EventType.GOOD_DECISION, function(){
 		window.alert('I like');
-		this.products.push(new mf.models.Product('Hellim'));
+		this.products.push(new app.models.Product('Hellim'));
 	}, false, this));
 
-	this.listeners.push(goog.events.listen(this, mf.components.LikeWidget.ViewModel.EventType.BAD_DECISION, function(){
+	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.EventType.BAD_DECISION, function(){
 		window.alert('I dislike');
 	}, false, this));
 };
@@ -60,7 +60,7 @@ mf.MainViewModel.prototype.bindModelEvents = function(){
  * 
  * @override
  */
-mf.MainViewModel.prototype.disposeInternal = function(){
+app.MainViewModel.prototype.disposeInternal = function(){
 	this.listeners.forEach(goog.events.unlistenByKey);
 	this.productListView.dispose();
 

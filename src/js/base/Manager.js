@@ -1,13 +1,13 @@
-goog.provide('mf.base.Manager');
-goog.require('mf.base.EventTarget');
+goog.provide('app.base.Manager');
+goog.require('app.base.EventTarget');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.EventTarget}
+ * @extends {app.base.EventTarget}
  */
-mf.base.Manager = function(){
+app.base.Manager = function(){
 	goog.base(this);
 };
-goog.inherits(mf.base.Manager, mf.base.EventTarget);
+goog.inherits(app.base.Manager, app.base.EventTarget);

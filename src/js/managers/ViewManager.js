@@ -1,13 +1,13 @@
-goog.provide('mf.managers.ViewManager');
-goog.require('mf.base.Manager');
+goog.provide('app.managers.ViewManager');
+goog.require('app.base.Manager');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.Manager}
+ * @extends {app.base.Manager}
  */
-mf.managers.ViewManager = function(){
+app.managers.ViewManager = function(){
 	this.history = [];
 	this.templates = {};
 	this.currentView = ko.observable({});
@@ -48,14 +48,14 @@ mf.managers.ViewManager = function(){
 
 	goog.base(this);
 };
-goog.inherits(mf.managers.ViewManager, mf.base.Manager);
-goog.addSingletonGetter(mf.managers.ViewManager);
+goog.inherits(app.managers.ViewManager, app.base.Manager);
+goog.addSingletonGetter(app.managers.ViewManager);
 
 
 /**
  * @protected
  */
-mf.managers.ViewManager.prototype._createStringTemplateEngine = function(templateEngine, templates){
+app.managers.ViewManager.prototype._createStringTemplateEngine = function(templateEngine, templates){
 	templateEngine['makeTemplateSource'] = function(template) {
     	return new ko.templateSources.stringTemplate(template, templates);
 	};
@@ -64,7 +64,7 @@ mf.managers.ViewManager.prototype._createStringTemplateEngine = function(templat
 };
 
 
-mf.managers.ViewManager.prototype.prepareTemplateEngine = function(templates){
+app.managers.ViewManager.prototype.prepareTemplateEngine = function(templates){
 	if(templates) 
 		ko.setTemplateEngine(this._createStringTemplateEngine(new ko.nativeTemplateEngine(), templates));
 	else 
@@ -74,19 +74,19 @@ mf.managers.ViewManager.prototype.prepareTemplateEngine = function(templates){
 
 /**
  * 
- * @param {mf.base.View} view 
+ * @param {app.base.View} view 
  */
-mf.managers.ViewManager.prototype.addTemplate = function(view){
+app.managers.ViewManager.prototype.addTemplate = function(view){
 	this.templates[view.getName()] = view.getTemplate();
 };
 
 
 /**
  * 
- * @param  {mf.base.View} view       New view to show
+ * @param  {app.base.View} view       New view to show
  * @param  {boolean=} keepInHistory  True or null if view needs to be kept in history, otherwise leave empty
  */
-mf.managers.ViewManager.prototype.switchToView = function(view, keepInHistory){
+app.managers.ViewManager.prototype.switchToView = function(view, keepInHistory){
 	keepInHistory = keepInHistory || true;
 	if(keepInHistory) this.history.push(this.currentView());
 
@@ -97,7 +97,7 @@ mf.managers.ViewManager.prototype.switchToView = function(view, keepInHistory){
 };
 
 
-mf.managers.ViewManager.prototype.goBack = function(){
+app.managers.ViewManager.prototype.goBack = function(){
 	if(this.history.length < 1) return;
 
 	var oldView = this.history.pop();

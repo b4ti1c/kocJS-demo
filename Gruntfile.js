@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 	config.closureBuilder = {
 		options: {
             builder: 'closure-library/goog/build/closurebuilder.py',
-            namespaces: 'mf.Bootstrapper',
+            namespaces: 'app.Bootstrapper',
             compilerFile: 'closure-library/goog/compiler/compiler.jar',
             output_mode: 'compiled',
             compile: true,

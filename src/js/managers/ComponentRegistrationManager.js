@@ -1,23 +1,23 @@
-goog.provide('mf.managers.ComponentRegistrationManager');
-goog.require('mf.base.Manager');
-goog.require('mf.components.LikeWidget.Component');
+goog.provide('app.managers.ComponentRegistrationManager');
+goog.require('app.base.Manager');
+goog.require('app.components.LikeWidget.Component');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.Manager}
+ * @extends {app.base.Manager}
  */
-mf.managers.ComponentRegistrationManager = function(){
+app.managers.ComponentRegistrationManager = function(){
 	goog.base(this);
 
-	this.register(new mf.components.LikeWidget.Component());
+	this.register(new app.components.LikeWidget.Component());
 };
-goog.inherits(mf.managers.ComponentRegistrationManager, mf.base.Manager);
-goog.addSingletonGetter(mf.managers.ComponentRegistrationManager);
+goog.inherits(app.managers.ComponentRegistrationManager, app.base.Manager);
+goog.addSingletonGetter(app.managers.ComponentRegistrationManager);
 
 
-mf.managers.ComponentRegistrationManager.prototype.register = function(component){
+app.managers.ComponentRegistrationManager.prototype.register = function(component){
 	ko.components.register(component.name, {
 		'viewModel': component.viewModel,
 		'template': component.template

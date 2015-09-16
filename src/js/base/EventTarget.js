@@ -1,4 +1,4 @@
-goog.provide('mf.base.EventTarget');
+goog.provide('app.base.EventTarget');
 goog.require('goog.events.EventTarget');
 
 
@@ -7,7 +7,7 @@ goog.require('goog.events.EventTarget');
  * @constructor
  * @extends {goog.events.EventTarget}
  */
-mf.base.EventTarget = function() {
+app.base.EventTarget = function() {
     goog.base(this);
 
     //this.exports = [];
@@ -17,7 +17,7 @@ mf.base.EventTarget = function() {
     if(!this.exports) this.exports = [];
     this.export();
 };
-goog.inherits(mf.base.EventTarget, goog.events.EventTarget);
+goog.inherits(app.base.EventTarget, goog.events.EventTarget);
 
 
 /**
@@ -25,7 +25,7 @@ goog.inherits(mf.base.EventTarget, goog.events.EventTarget);
  * listeners.
  * @protected
  */
-mf.base.EventTarget.prototype.bindModelEvents = function() {
+app.base.EventTarget.prototype.bindModelEvents = function() {
 };
 
 
@@ -34,11 +34,11 @@ mf.base.EventTarget.prototype.bindModelEvents = function() {
  * listeners.
  * @protected
  */
-mf.base.EventTarget.prototype.bindDOMEvents = function() {
+app.base.EventTarget.prototype.bindDOMEvents = function() {
 };
 
 
-mf.base.EventTarget.prototype.export = function(){
+app.base.EventTarget.prototype.export = function(){
 	this.exports.forEach(function(item){
 		ko.exportProperty(this, item.ref, item.obj);
 		console.log('exported ' + item.ref);
@@ -49,6 +49,6 @@ mf.base.EventTarget.prototype.export = function(){
 /**
  * @override
  */
-mf.base.EventTarget.prototype.disposeInternal = function(){
+app.base.EventTarget.prototype.disposeInternal = function(){
     goog.base(this, 'disposeInternal');
 };

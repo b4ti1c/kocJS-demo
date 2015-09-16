@@ -1,23 +1,23 @@
-goog.provide('mf.base.View');
-goog.require('mf.base.EventTarget');
+goog.provide('app.base.View');
+goog.require('app.base.EventTarget');
 
 
 
 /**
  * @constructor
- * @extends {mf.base.EventTarget}
+ * @extends {app.base.EventTarget}
  */
-mf.base.View = function(){
+app.base.View = function(){
 	goog.base(this);
 };
-goog.inherits(mf.base.View, mf.base.EventTarget);
+goog.inherits(app.base.View, app.base.EventTarget);
 
 
 /**
  * The name of the element in DOM and should be overriden by the implementer
  * @protected
  */
-mf.base.View.prototype.name = 'default-view';
+app.base.View.prototype.name = 'default-view';
 
 
 
@@ -25,16 +25,16 @@ mf.base.View.prototype.name = 'default-view';
  * The name of the element in DOM and should be overriden by the implementer
  * @protected
  */
-mf.base.View.prototype.template = function(){
+app.base.View.prototype.template = function(){
 	return '<template></template>';
 };
 
 
-mf.base.View.prototype.getName = function(){
+app.base.View.prototype.getName = function(){
 	return this.name;
 };
 
 
-mf.base.View.prototype.getTemplate = function(){
+app.base.View.prototype.getTemplate = function(){
 	return this.template;
 };

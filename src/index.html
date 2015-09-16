@@ -16,12 +16,7 @@
     </script>
 	<like-widget params="value: ko.observable(null)"></like-widget>
 
-	<ul data-bind="foreach: products">
-	    <li class="product">
-	        <strong data-bind="text: name"></strong>
-	        <like-widget params="value: userRating"></like-widget>
-	    </li>
-	</ul>
+	<div data-bind="template: vm.currentView()"></div>
 </body>
 
 

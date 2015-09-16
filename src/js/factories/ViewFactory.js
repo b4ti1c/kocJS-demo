@@ -8,6 +8,7 @@ goog.require('goog.events.EventTarget');
  * @extends {goog.events.EventTarget}
  */
 app.factories.ViewFactory = function(){
+	goog.base(this);
 };
 goog.inherits(app.factories.ViewFactory, goog.events.EventTarget);
 goog.addSingletonGetter(app.factories.ViewFactory);

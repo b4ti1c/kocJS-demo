@@ -12,12 +12,8 @@ goog.require('app.base.Model');
  * @param {string=} rating [description]
  */
 app.models.Product = function(name, rating) {
-    this.name = name;
-    this.userRating = ko.observable(rating || null);
-
-    this.exports = [];
-    this.exports.push({ref: 'name', obj: this.name});
-    this.exports.push({ref: 'userRating', obj: this.userRating});
+    this['name'] = name;
+    this['userRating'] = ko.observable(rating || null);
 	
 	goog.base(this);
 };

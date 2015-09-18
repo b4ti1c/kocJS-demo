@@ -22,7 +22,7 @@ app.MainViewModel = function(){
 	app.vm.addTemplate(this.productListView);
 	app.vm.prepareTemplateEngine();
 
-	app.vm.switchToView(this.productListView);
+	app.vm.goToView(this.productListView);
 
 	this.exports = [];
 	this.exports.push({

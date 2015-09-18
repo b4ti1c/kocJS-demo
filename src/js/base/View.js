@@ -30,6 +30,10 @@ app.base.View.prototype.template = function(){
 };
 
 
+app.base.View.prototype.prepareForDisplay = function(){
+};
+
+
 app.base.View.prototype.getName = function(){
 	return this.name;
 };

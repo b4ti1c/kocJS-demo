@@ -96,6 +96,8 @@ app.managers.ViewManager.prototype.goToView = function(view, keepInHistory, call
 		'data': view
 	});
 
+	view.prepareForDisplay();
+
 	callback && callback();
 };
 

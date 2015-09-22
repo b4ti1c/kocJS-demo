@@ -40,7 +40,7 @@ app.base.View.prototype.prepareForDisplay = function(){
  * @param  {app.base.View} viewModel   [description]
  */
 app.base.View.prototype.afterRender = function(elementInfo, viewModel){
-	viewModel.$element = elementInfo[0];
+	viewModel.$element = $(elementInfo[0]);
 	viewModel.prepareForDisplay();
 };
 

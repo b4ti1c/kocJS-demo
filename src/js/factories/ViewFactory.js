@@ -22,5 +22,7 @@ goog.addSingletonGetter(app.factories.ViewFactory);
  */
 app.factories.ViewFactory.prototype.createView = function(parent, newView){
 	if(parent) newView.setParentEventTarget(parent);
+	app.vm.addTemplate(newView);
+	app.vm.prepareTemplateEngine();
 	return newView;
 };

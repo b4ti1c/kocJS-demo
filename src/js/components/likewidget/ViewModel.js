@@ -19,14 +19,6 @@ app.components.LikeWidget.ViewModel = function(params){
     		ref: 'chosenValue', 
     		obj: this.chosenValue
     	},
-    	{
-    		ref: 'like', 
-    		obj: this.like
-    	},
-    	{
-    		ref: 'dislike', 
-    		obj: this.dislike
-    	}
     ];
 
 	goog.base(this);
@@ -34,12 +26,20 @@ app.components.LikeWidget.ViewModel = function(params){
 goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
 
 
+/**
+ * 
+ * @expose
+ */
 app.components.LikeWidget.ViewModel.prototype.like = function() { 
 	this.chosenValue('like'); 
     this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.GOOD_DECISION);
 };
 
 
+/**
+ * 
+ * @expose
+ */
 app.components.LikeWidget.ViewModel.prototype.dislike = function() { 
 	this.chosenValue('dislike'); 
     this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.BAD_DECISION);

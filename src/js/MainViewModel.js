@@ -10,7 +10,9 @@ goog.require('app.views.ProductList.View');
  * @constructor
  * @extends {app.base.ViewModel}
  */
-app.MainViewModel = function(){
+app.MainViewModel = function(){	
+	goog.base(this);
+
 	this.products = ko.observableArray([
         new app.models.Product('Garlic bread'),
         new app.models.Product('Pain au chocolat'),
@@ -19,22 +21,10 @@ app.MainViewModel = function(){
 
 	this.productListView = app.vf.createView(this, new app.views.ProductList.View(this.products));
 
-	app.vm.addTemplate(this.productListView);
-	app.vm.prepareTemplateEngine();
-
 	app.vm.goToView(this.productListView);
 
-	this.exports = [];
-	this.exports.push({
-		ref: 'products',
-		obj: this.products
-	});
-	this.exports.push({
-		ref: 'vm',
-		obj: app.vm
-	});
-
-	goog.base(this);
+	this.exports.push({ref: 'vm', obj: app.vm});
+	this.export();
 };
 goog.inherits(app.MainViewModel, app.base.ViewModel);
 

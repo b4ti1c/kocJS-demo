@@ -34,6 +34,17 @@ app.base.View.prototype.prepareForDisplay = function(){
 };
 
 
+/**
+ * 
+ * @param  {Element} elementInfo [description]
+ * @param  {app.base.View} viewModel   [description]
+ */
+app.base.View.prototype.afterRender = function(elementInfo, viewModel){
+	viewModel.$element = elementInfo[0];
+	viewModel.prepareForDisplay();
+};
+
+
 app.base.View.prototype.getName = function(){
 	return this.name;
 };

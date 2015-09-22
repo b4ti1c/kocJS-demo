@@ -93,10 +93,9 @@ app.managers.ViewManager.prototype.goToView = function(view, keepInHistory, call
 
 	this.currentView({
 		'name': view.getName(),
-		'data': view
+		'data': view,
+		'afterRender': view.afterRender
 	});
-
-	view.prepareForDisplay();
 
 	callback && callback();
 };
@@ -108,7 +107,8 @@ app.managers.ViewManager.prototype.goBack = function(){
 	var oldView = this.history.pop();
 
 	this.currentView({
-		'name': oldView.getName(),
-		'data': oldView
+		'name': oldView['name'],
+		'data': oldView['data'],
+		'afterRender': oldView['afterRender']
 	});
 };

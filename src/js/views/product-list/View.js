@@ -11,14 +11,11 @@ goog.require('app.views.ProductList.Template');
  * @param {Object} products [description]
  */
 app.views.ProductList.View = function(products){
-	this.products = products;
-
-	this.exports = [{
-		ref: 'products',
-		obj: this.products
-	}]
-
 	goog.base(this);
+
+	this.products = products;
+	this.exports.push({ref: 'products', obj: this.products});
+	this.export();
 };
 goog.inherits(app.views.ProductList.View, app.base.View);
 

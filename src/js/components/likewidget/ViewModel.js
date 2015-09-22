@@ -7,21 +7,11 @@ goog.require('app.base.ViewModel');
  * @constructor
  * @extends {app.base.ViewModel}
  * 
- * @param {Object=} params [description]
+ * @param {Object} params [description]
+ * @param {Element} element
  */
-app.components.LikeWidget.ViewModel = function(params){
-    this.parent = params['parent'];
-
-    this.chosenValue = params ? params['value'] : null;
-
-    this.exports = [
-    	{
-    		ref: 'chosenValue', 
-    		obj: this.chosenValue
-    	},
-    ];
-
-	goog.base(this);
+app.components.LikeWidget.ViewModel = function(params, element){
+	goog.base(this, params, element);
 };
 goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
 
@@ -31,7 +21,7 @@ goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
  * @expose
  */
 app.components.LikeWidget.ViewModel.prototype.like = function() { 
-	this.chosenValue('like'); 
+	this['value']('like'); 
     this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.GOOD_DECISION);
 };
 
@@ -41,7 +31,7 @@ app.components.LikeWidget.ViewModel.prototype.like = function() {
  * @expose
  */
 app.components.LikeWidget.ViewModel.prototype.dislike = function() { 
-	this.chosenValue('dislike'); 
+	this['value']('dislike'); 
     this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.BAD_DECISION);
 };
 

@@ -11,6 +11,10 @@ goog.require('app.base.EventTarget');
  * @param {Element=} element
  */
 app.base.ViewModel = function(params, element) {
+    params = params || {};
+    Object.keys(params).forEach(function(key){
+    	this[key] = params[key];
+    }, this);
 
     this.parent = this['parent'] || null;;
 	if(this.parent) this.setParentEventTarget(this.parent);

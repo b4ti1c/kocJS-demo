@@ -83,7 +83,7 @@ app.managers.ViewManager.prototype.addTemplate = function(view){
 
 /**
  * 
- * @param  {mf.base.View} view       New view to show
+ * @param  {app.base.View} view       New view to show
  * @param  {?boolean=} keepInHistory  True or null if view needs to be kept in history, otherwise leave empty
  * @param  {?Function=} callback Callback function to execute right after making the switch to the new view
  */
@@ -102,7 +102,7 @@ app.managers.ViewManager.prototype.goToView = function(view, keepInHistory, call
 
 
 app.managers.ViewManager.prototype.goBack = function(){
-	if(this.history.length < 1) return;
+	if(this.history.length < 2) return;
 
 	var oldView = this.history.pop();
 

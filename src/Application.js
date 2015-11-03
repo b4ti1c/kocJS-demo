@@ -1,5 +1,4 @@
 goog.provide('app.Application');
-goog.require('app.helpers.GccKnockoutHelper');
 goog.require('app.managers.ComponentRegistrationManager');
 goog.require('app.managers.ViewManager');
 goog.require('app.factories.ViewFactory');

@@ -1,5 +1,6 @@
 goog.provide('app.base.EventTarget');
 goog.require('goog.events.EventTarget');
+goog.require('app.helpers.GccKnockoutHelper');
 
 
 
@@ -32,7 +33,7 @@ app.base.EventTarget.prototype.bindEvents = function() {
 
 app.base.EventTarget.prototype.export = function(){
 	this.exports.forEach(function(item){
-		ko.exportProperty(this, item.ref, item.obj);
+		app.helpers.GccKnockoutHelper.getInstance().exportProperty(this, item.ref, item.obj);
 	}, this);
 };
 

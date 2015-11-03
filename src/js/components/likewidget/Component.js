@@ -19,7 +19,7 @@ goog.inherits(app.components.LikeWidget.Component, app.base.Component);
 /**
  * @override
  */
-app.components.LikeWidget.Component.prototype.name = 'like-widget';
+app.components.LikeWidget.Component.prototype.name = 'like-widget-component';
 
 
 /**

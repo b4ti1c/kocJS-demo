@@ -19,11 +19,13 @@ goog.inherits(app.components.LikeWidget.Template, app.base.Template);
  * @override
  */
 app.components.LikeWidget.Template.prototype.templates_base = function(){
-	return '<div class="like-or-dislike" data-bind="visible: !value()">\
-	            <button data-bind="click: like">Like it</button>\
-	            <button data-bind="click: dislike">Dislike it</button>\
-	        </div>\
-	        <div class="result" data-bind="visible: value">\
-	            You <strong data-bind="text: value"></strong> it\
-	        </div>';
+	return '<like-widget>\
+				<div class="like-or-dislike" data-bind="visible: !value()">\
+		            <button data-bind="click: like">Like it</button>\
+		            <button data-bind="click: dislike">Dislike it</button>\
+		        </div>\
+		        <div class="result" data-bind="visible: value">\
+		            You <strong data-bind="text: value"></strong> it\
+		        </div>\
+		    </like-widget>';
 };

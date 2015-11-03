@@ -22,7 +22,7 @@ app.views.ProductList.Template.prototype.templates_base = function(){
 	return '<ul data-bind="foreach: products">\
 			    <li class="product">\
 			        <strong data-bind="text: name"></strong>\
-			        <like-widget params="parent: $parent, value: userRating"></like-widget>\
+			        <!-- ko component: {name: \'like-widget-component\', params: {parent: $parent, value: userRating}} --><!-- /ko -->\
 			    </li>\
 			</ul>';
 };

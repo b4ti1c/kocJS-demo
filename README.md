@@ -3,11 +3,8 @@ Boilerplate for using Google Closure Compiler with KnockoutJS
 
 ## Installation
 
-    git clone https://github.com/batilc1/gcc-knockout.git
+    git clone --recursive https://github.com/batilc1/gcc-knockout.git
     cd gcc-knockout
-    git clone https://github.com/batilc1/closure-library
-    git add closure-library
-
     npm install
 
 ## Building for Development

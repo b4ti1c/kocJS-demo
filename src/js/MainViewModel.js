@@ -50,8 +50,7 @@ app.MainViewModel.prototype.bindEvents = function(){
  * @override
  */
 app.MainViewModel.prototype.disposeInternal = function(){
-	this.listeners.forEach(goog.events.unlistenByKey);
-	this.productListView.dispose();
-
 	goog.base(this, 'disposeInternal');
+
+	this.productListView.dispose();
 };

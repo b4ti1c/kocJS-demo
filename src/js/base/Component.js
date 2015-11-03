@@ -1,6 +1,7 @@
 goog.provide('app.base.Component');
 goog.require('app.base.EventTarget');
 goog.require('app.base.Template');
+goog.require('app.base.ViewModel');
 
 
 
@@ -10,6 +11,7 @@ goog.require('app.base.Template');
  */
 app.base.Component = function() {
     goog.base(this);
+    this.register();
 };
 goog.inherits(app.base.Component, app.base.EventTarget);
 
@@ -33,3 +35,20 @@ app.base.Component.prototype.viewModel = app.base.ViewModel;
  * @protected
  */
 app.base.Component.prototype.template = (new app.base.Template()).template;
+
+
+/**
+ * 
+ * @protected
+ */
+app.base.Component.prototype.register = function(){
+	var that = this;
+	ko.components.register(this.name, {
+		'viewModel': {
+			'createViewModel': function(params, componentInfo){
+				return new that.viewModel(params, componentInfo.element);
+			}
+		},
+		'template': this.template
+	});
+};

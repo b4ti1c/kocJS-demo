@@ -33,8 +33,7 @@ goog.inherits(app.MainViewModel, app.base.ViewModel);
  * 
  * @override
  */
-app.MainViewModel.prototype.bindModelEvents = function(){	
-	this.listeners = [];
+app.MainViewModel.prototype.bindEvents = function(){	
 	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.EventType.GOOD_DECISION, function(){
 		window.alert('I like');
 		this.products.push(new app.models.Product('Hellim'));

@@ -21,5 +21,5 @@ goog.inherits(app.base.Template, app.base.EventTarget);
  * @protected
  */
 app.base.Template.prototype.templates_base = function(){
-	return '<mf-default></mf-default>';
+	return '<default></default>';
 };

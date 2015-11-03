@@ -1,5 +1,6 @@
 goog.provide('app.base.Component');
 goog.require('app.base.EventTarget');
+goog.require('app.base.Template');
 
 
 
@@ -17,7 +18,7 @@ goog.inherits(app.base.Component, app.base.EventTarget);
  * The name of the element in DOM and should be overriden by the implementer
  * @protected
  */
-app.base.Component.prototype.name = 'mf-default';
+app.base.Component.prototype.name = 'default-component';
 
 
 /**
@@ -31,4 +32,4 @@ app.base.Component.prototype.viewModel = app.base.ViewModel;
  * The template (captured in a string). It should be overriden by the implementer's template.
  * @protected
  */
-app.base.Component.prototype.template = '<mf-default></mf-default>';
+app.base.Component.prototype.template = (new app.base.Template()).template;

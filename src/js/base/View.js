@@ -1,5 +1,6 @@
 goog.provide('app.base.View');
 goog.require('app.base.EventTarget');
+goog.require('app.base.Template');
 
 
 
@@ -25,9 +26,7 @@ app.base.View.prototype.name = 'default-view';
  * The name of the element in DOM and should be overriden by the implementer
  * @protected
  */
-app.base.View.prototype.template = function(){
-	return '<template></template>';
-};
+app.base.View.prototype.template = (new app.base.Template()).template;
 
 
 app.base.View.prototype.prepareForDisplay = function(){

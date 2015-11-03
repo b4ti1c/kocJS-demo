@@ -12,6 +12,11 @@ goog.require('app.base.ViewModel');
  */
 app.components.LikeWidget.ViewModel = function(params, element){
 	goog.base(this, params, element);
+
+	this.comment = ko.observable('Hey there!');
+
+	this.exports.push({ref: 'comment', obj: this.comment});
+	this.export();
 };
 goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
 

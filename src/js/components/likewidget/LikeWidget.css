@@ -5,3 +5,8 @@ like-widget {
 like-widget button {
 	height: 44px;
 }
+
+like-widget comment {
+	font-size: 11px;
+	color: blue;
+}

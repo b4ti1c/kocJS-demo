@@ -31,4 +31,4 @@ app.components.LikeWidget.Component.prototype.viewModel = app.components.LikeWid
 /**
  * @override
  */
-app.components.LikeWidget.Component.prototype.template = (new app.components.LikeWidget.Template()).template;
+app.components.LikeWidget.Component.prototype.template = app.base.Template.$getHtmlSync('/js/components/likewidget/LikeWidget.html');

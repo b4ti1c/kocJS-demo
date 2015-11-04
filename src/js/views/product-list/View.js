@@ -26,8 +26,7 @@ goog.inherits(app.views.ProductList.View, app.base.View);
 app.views.ProductList.View.prototype.name = 'productlist-view';
 
 
-
 /**
  * @override
  */
-app.views.ProductList.View.prototype.template = (new app.views.ProductList.Template()).template;
+app.views.ProductList.View.prototype.template = app.base.Template.$getHtmlSync('/js/views/product-list/ProductList.html');

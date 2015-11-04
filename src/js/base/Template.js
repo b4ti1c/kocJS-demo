@@ -23,3 +23,12 @@ goog.inherits(app.base.Template, app.base.EventTarget);
 app.base.Template.prototype.templates_base = function(){
 	return '<default></default>';
 };
+
+
+/**
+ * 
+ * @expose
+ */
+app.base.Template.$getHtmlSync = function(url){
+	return $.ajax({type: "GET", url: url, async: false}).responseText;
+};

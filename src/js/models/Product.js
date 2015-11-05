@@ -12,8 +12,11 @@ goog.require('app.base.Model');
  * @param {string=} rating [description]
  */
 app.models.Product = function(name, rating) {
-    this['name'] = this.name = name;
-    this['userRating'] = this.userRating = ko.observable(rating || null);
+    /** @expose */
+    this.name = name;
+
+    /** @expose */
+    this.userRating = ko.observable(rating || null);
 	
 	goog.base(this);
 };

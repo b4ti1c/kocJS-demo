@@ -21,9 +21,6 @@ app.base.ViewModel = function(params, element) {
 
 	if(element && element.nodeName == '#comment') this.$element = $(element.nextElementSibling);
     else this.$element = $(element);
-	
-	this.exports = this.exports || [];
-	this.exports.push({ref: 'parent', obj: this.parent})
 
 	goog.base(this);
 };

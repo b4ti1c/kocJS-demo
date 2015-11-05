@@ -10,6 +10,8 @@ goog.require('app.base.Manager');
 app.managers.ViewManager = function(){
 	this.history = [];
 	this.templates = {};
+
+	/** @expose */
 	this.currentView = ko.observable({});
 
 
@@ -38,12 +40,6 @@ app.managers.ViewManager = function(){
 	        } 
 	        this.templates[this.templateName] = value;   
 	    }
-	});
-
-	this.exports = [];
-	this.exports.push({
-		ref: 'currentView',
-		obj: this.currentView
 	});
 
 	goog.base(this);

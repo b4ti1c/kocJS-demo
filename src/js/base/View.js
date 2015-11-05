@@ -30,21 +30,14 @@ app.base.View.prototype.template = app.base.Template.$getHtmlSync('/js/base/Defa
 
 
 /**
- * This function is called by the ViewManager before the 
+ * This function is called by the ViewManager just after the 
  * corresponding element is rendered in DOM
- */
-app.base.View.prototype.prepareForDisplay = function(){
-};
-
-
-/**
  * 
  * @param  {Element} elementInfo [description]
  * @param  {app.base.View} viewModel   [description]
  */
 app.base.View.prototype.afterRender = function(elementInfo, viewModel){
 	viewModel.$element = $(elementInfo[0]);
-	viewModel.prepareForDisplay();
 };
 
 

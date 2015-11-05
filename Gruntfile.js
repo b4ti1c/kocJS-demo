@@ -24,7 +24,9 @@ module.exports = function(grunt) {
 	var config = {};
 
 	config.clean = {
-		dist: ['dist']
+		dist: ['dist'],
+        temp: ['build'],
+        all: ['dist', 'build']
 	};
 
 	config.mkdir = {
@@ -221,6 +223,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['build']);
 
 
+    grunt.registerTask('clear', ['clean:all']);
     grunt.registerTask('production', ['clean:dist', 'mkdir:all', 'newer:closureBuilder', 'newer:uglify', 'concat:js', 'copy:advancedjs', 'concat:css', 'copy:resources', 'combine:prod']);
 
     grunt.registerTask('test', ['clean:dist', 'mkdir:all', 'newer:closureDepsWriter', 'newer:uglify', 'copy:lib', 'copy:jsdeps', 'symlink', 'combine:test']);

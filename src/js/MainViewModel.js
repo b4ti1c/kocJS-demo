@@ -39,10 +39,19 @@ app.MainViewModel.prototype.bindEvents = function(){
 
 
 app.MainViewModel.prototype.onLikeDecision = function(evt){
-	if(evt.value) {
-		window.alert('I like');
-		this.products.push(new app.models.Product('Hellim'));
-	} else window.alert('I dislike');
+	switch(evt.value){
+		case app.components.LikeWidget.ViewModel.Status.LIKE:
+			window.alert('I like');
+			this.products.push(new app.models.Product('Hellim'));
+			break;
+
+		case app.components.LikeWidget.ViewModel.Status.DISLIKE:
+			window.alert('I dislike');
+			break;
+
+		default:
+			break;
+	}
 };
 
 

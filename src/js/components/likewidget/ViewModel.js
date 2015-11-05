@@ -23,34 +23,21 @@ goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
 
 
 /**
- * 
+ * @param {string} status [description]
  * @expose
  */
-app.components.LikeWidget.ViewModel.prototype.like = function() { 
-	this.value('like'); 
+app.components.LikeWidget.ViewModel.prototype.likeStatus = function(status) { 
+    this.value(status); 
     this.dispatchEvent({
-    	type: app.components.LikeWidget.ViewModel.EventType.DECISION,
-    	value: true
+        type: app.components.LikeWidget.ViewModel.EventType.DECISION,
+        value: status
     });
 };
 
 
 /**
  * 
- * @expose
- */
-app.components.LikeWidget.ViewModel.prototype.dislike = function() { 
-	this.value('dislike'); 
-    this.dispatchEvent({
-    	type: app.components.LikeWidget.ViewModel.EventType.DECISION,
-    	value: false
-    });
-};
-
-
-/**
- * 
- * @param  {string} str
+ * @param {string} str
  * @expose
  */
 app.components.LikeWidget.ViewModel.prototype.comment = function(str){
@@ -64,4 +51,14 @@ app.components.LikeWidget.ViewModel.prototype.comment = function(str){
  */
 app.components.LikeWidget.ViewModel.EventType = {
     DECISION: 'like-decision',
+};
+
+
+/**
+ * 
+ * @enum {string}
+ */
+app.components.LikeWidget.ViewModel.Status = {
+    LIKE: 'like',
+    DISLIKE: 'dislike',
 };

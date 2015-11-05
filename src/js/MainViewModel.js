@@ -34,14 +34,15 @@ goog.inherits(app.MainViewModel, app.base.ViewModel);
  * @override
  */
 app.MainViewModel.prototype.bindEvents = function(){	
-	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.EventType.GOOD_DECISION, function(){
+	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.EventType.DECISION, this.onLikeDecision, false, this));
+};
+
+
+app.MainViewModel.prototype.onLikeDecision = function(evt){
+	if(evt.value) {
 		window.alert('I like');
 		this.products.push(new app.models.Product('Hellim'));
-	}, false, this));
-
-	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.EventType.BAD_DECISION, function(){
-		window.alert('I dislike');
-	}, false, this));
+	} else window.alert('I dislike');
 };
 
 

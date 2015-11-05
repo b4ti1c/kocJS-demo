@@ -27,7 +27,10 @@ goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
  */
 app.components.LikeWidget.ViewModel.prototype.like = function() { 
 	this['value']('like'); 
-    this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.GOOD_DECISION);
+    this.dispatchEvent({
+    	type: app.components.LikeWidget.ViewModel.EventType.DECISION,
+    	value: true
+    });
 };
 
 
@@ -37,7 +40,10 @@ app.components.LikeWidget.ViewModel.prototype.like = function() {
  */
 app.components.LikeWidget.ViewModel.prototype.dislike = function() { 
 	this['value']('dislike'); 
-    this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.BAD_DECISION);
+    this.dispatchEvent({
+    	type: app.components.LikeWidget.ViewModel.EventType.DECISION,
+    	value: false
+    });
 };
 
 
@@ -56,6 +62,5 @@ app.components.LikeWidget.ViewModel.prototype.comment = function(str){
  * @enum {string}
  */
 app.components.LikeWidget.ViewModel.EventType = {
-    GOOD_DECISION: 'helikes',
-    BAD_DECISION: 'hehates'
+    DECISION: 'like-decision',
 };

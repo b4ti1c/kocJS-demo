@@ -3,7 +3,9 @@
         <button data-bind="click: like">Like it</button>
         <button data-bind="click: dislike">Dislike it</button>
     </div>
-    <comment data-bind="text: comment()"></comment>
+    <comment data-bind="click: function(){ comment('Nested strings \'work\' ok!')}">
+    	<p data-bind="text: commentary()"></p>
+    </comment>
     <div class="result" data-bind="visible: value">
         You <strong data-bind="text: value"></strong> it
     </div>

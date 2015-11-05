@@ -13,9 +13,9 @@ goog.require('app.base.ViewModel');
 app.components.LikeWidget.ViewModel = function(params, element){
 	goog.base(this, params, element);
 
-	this.comment = ko.observable('Hey there!');
+	this.commentary = ko.observable('Click Me!');
 
-	this.exports.push({ref: 'comment', obj: this.comment});
+	this.exports.push({ref: 'commentary', obj: this.commentary});
 	this.export();
 };
 goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
@@ -38,6 +38,16 @@ app.components.LikeWidget.ViewModel.prototype.like = function() {
 app.components.LikeWidget.ViewModel.prototype.dislike = function() { 
 	this['value']('dislike'); 
     this.dispatchEvent(app.components.LikeWidget.ViewModel.EventType.BAD_DECISION);
+};
+
+
+/**
+ * 
+ * @param  {string} str
+ * @expose
+ */
+app.components.LikeWidget.ViewModel.prototype.comment = function(str){
+	this.commentary(str);
 };
 
 

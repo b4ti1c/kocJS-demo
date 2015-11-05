@@ -12,9 +12,8 @@ goog.require('app.base.View');
 app.views.ProductList.View = function(products){
 	goog.base(this);
 
+	/** @expose */
 	this.products = products;
-	this.exports.push({ref: 'products', obj: this.products});
-	this.export();
 };
 goog.inherits(app.views.ProductList.View, app.base.View);
 

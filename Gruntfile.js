@@ -5,6 +5,22 @@ module.exports = function(grunt) {
         return '<link rel="stylesheet" type="text/css" href="' + file + '" /> \n\t';
     }).join('');
 
+    var includeHtmls = function(fileContent, filePath){
+        if(fileContent.indexOf('.$getHtmlSync(') != -1){
+            fileContent = fileContent.replace(/\S*\.\$getHtmlSync\(["'](.*)["']\)/g, function(match, p1){
+                var htmlPath = __dirname + '/src' + p1;
+                var content = grunt.file.read(htmlPath);
+
+                content = content.replace(/\"/g, '\\x22')
+                                 .replace(/\'/g, '\\x27')
+                                 .replace(/\r\n|\n/g, "\\n");
+
+                return '\'' + content + '\'';
+            });
+        }
+        return fileContent;
+    };
+
 	var config = {};
 
 	config.clean = {
@@ -77,7 +93,7 @@ module.exports = function(grunt) {
                 separator: ';\n\n'
             },
             src: ['build/lib.js', 'build/compiled.js'],
-            dest: 'dist/compiled.js'
+            dest: 'build/compiled.js'
         },
         css: {
             options: {
@@ -132,7 +148,7 @@ module.exports = function(grunt) {
             }
         },
         closureBuilder: {
-            src: ['src/**/*.js'],
+            src: ['src/**/*.js', 'src/js/**/*.html'],
             dest: 'build/compiled.js',
             options: {
                 tasks: ['closureBuilder']
@@ -167,6 +183,15 @@ module.exports = function(grunt) {
             files: [
                 {expand: true, cwd: 'src/', src:'rsc/**/*', dest: 'dist/'}
             ]
+        },
+        advancedjs: {
+            options: {
+                expand: true,
+                process: includeHtmls
+            },
+            files: [
+                {src: 'build/compiled.js', dest: 'dist/compiled.js'}
+            ]
         }
     };
 
@@ -196,7 +221,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['build']);
 
 
-    grunt.registerTask('production', ['clean:dist', 'mkdir:all', 'newer:closureBuilder', 'newer:uglify', 'concat:js', 'concat:css', 'copy:resources', 'combine:prod']);
+    grunt.registerTask('production', ['clean:dist', 'mkdir:all', 'newer:closureBuilder', 'newer:uglify', 'concat:js', 'copy:advancedjs', 'concat:css', 'copy:resources', 'combine:prod']);
 
     grunt.registerTask('test', ['clean:dist', 'mkdir:all', 'newer:closureDepsWriter', 'newer:uglify', 'copy:lib', 'copy:jsdeps', 'symlink', 'combine:test']);
 };

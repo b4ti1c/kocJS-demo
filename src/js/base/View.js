@@ -29,6 +29,10 @@ app.base.View.prototype.name = 'default-view';
 app.base.View.prototype.template = app.base.Template.$getHtmlSync('/js/base/DefaultTemplate.html');
 
 
+/**
+ * This function is called by the ViewManager before the 
+ * corresponding element is rendered in DOM
+ */
 app.base.View.prototype.prepareForDisplay = function(){
 };
 

@@ -60,11 +60,12 @@ app.managers.ViewManager.prototype._createStringTemplateEngine = function(templa
 };
 
 
+/**
+ * 
+ * @param {string=} templates
+ */
 app.managers.ViewManager.prototype.prepareTemplateEngine = function(templates){
-	if(templates) 
-		ko.setTemplateEngine(this._createStringTemplateEngine(new ko.nativeTemplateEngine(), templates));
-	else 
-		ko.setTemplateEngine(this._createStringTemplateEngine(new ko.nativeTemplateEngine(), this.templates));
+	ko.setTemplateEngine(this._createStringTemplateEngine(new ko.nativeTemplateEngine(), templates || this.templates));
 };
 
 

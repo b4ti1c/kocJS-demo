@@ -1,7 +1,6 @@
 goog.provide('app.components.LikeWidget.Component');
 goog.require('app.base.Component');
 goog.require('app.components.LikeWidget.ViewModel');
-goog.require('app.components.LikeWidget.Template');
 
  
 

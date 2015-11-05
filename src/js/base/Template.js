@@ -10,23 +10,13 @@ goog.require('app.base.EventTarget');
  */
 app.base.Template = function() {
 	goog.base(this);
-
-	this.template = this.templates_base();
 };
 goog.inherits(app.base.Template, app.base.EventTarget);
 
 
 /**
- * Retrieves the html element, captured in a string. This method should be overriden by the implementer.
- * @protected
- */
-app.base.Template.prototype.templates_base = function(){
-	return '<default></default>';
-};
-
-
-/**
- * 
+ * Retrieves the html element, captured in a string using a synchronous http request from the localhost.
+ * This method gets obscure when production mode (in grunt) is enabled.
  * @expose
  */
 app.base.Template.$getHtmlSync = function(url){

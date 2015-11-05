@@ -31,10 +31,11 @@ app.base.Component.prototype.viewModel = app.base.ViewModel;
 
 
 /**
- * The template (captured in a string). It should be overriden by the implementer's template.
+ * The template (captured in a string). Corresponding url 
+ * should be provided by the implementer's template.
  * @protected
  */
-app.base.Component.prototype.template = (new app.base.Template()).template;
+app.base.Component.prototype.template = app.base.Template.$getHtmlSync('/js/base/DefaultTemplate.html');
 
 
 /**

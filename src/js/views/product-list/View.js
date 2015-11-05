@@ -1,6 +1,5 @@
 goog.provide('app.views.ProductList.View');
 goog.require('app.base.View');
-goog.require('app.views.ProductList.Template');
 
 
 

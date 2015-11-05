@@ -21,12 +21,12 @@ goog.inherits(app.base.View, app.base.EventTarget);
 app.base.View.prototype.name = 'default-view';
 
 
-
 /**
- * The name of the element in DOM and should be overriden by the implementer
+ * The template (captured in a string). Corresponding url should 
+ * be provided by the implementer's template.
  * @protected
  */
-app.base.View.prototype.template = (new app.base.Template()).template;
+app.base.View.prototype.template = app.base.Template.$getHtmlSync('/js/base/DefaultTemplate.html');
 
 
 app.base.View.prototype.prepareForDisplay = function(){

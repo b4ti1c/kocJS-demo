@@ -1,7 +1,6 @@
 goog.provide('app.components.LikeWidget.Component');
 goog.require('app.base.Component');
 goog.require('app.components.LikeWidget.ViewModel');
-goog.require('app.components.LikeWidget.Template');
 
  
 
@@ -31,4 +30,4 @@ app.components.LikeWidget.Component.prototype.viewModel = app.components.LikeWid
 /**
  * @override
  */
-app.components.LikeWidget.Component.prototype.template = (new app.components.LikeWidget.Template()).template;
+app.components.LikeWidget.Component.prototype.template = app.base.Template.$getHtmlSync('/js/components/likewidget/LikeWidget.html');

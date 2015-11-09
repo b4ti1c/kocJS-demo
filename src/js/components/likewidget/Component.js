@@ -30,4 +30,4 @@ app.components.LikeWidget.Component.prototype.viewModel = app.components.LikeWid
 /**
  * @override
  */
-app.components.LikeWidget.Component.prototype.template = koc.base.Template.$getHtmlSync('/js/components/likewidget/LikeWidget.html');
+app.components.LikeWidget.Component.prototype.template = koc.base.Component.$getHtmlSync('/js/components/likewidget/LikeWidget.html');

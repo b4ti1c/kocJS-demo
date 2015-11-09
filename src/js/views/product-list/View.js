@@ -27,4 +27,4 @@ app.views.ProductList.View.prototype.name = 'productlist-view';
 /**
  * @override
  */
-app.views.ProductList.View.prototype.template = koc.base.Template.$getHtmlSync('/js/views/product-list/ProductList.html');
+app.views.ProductList.View.prototype.template = koc.base.View.$getHtmlSync('/js/views/product-list/ProductList.html');

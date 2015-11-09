@@ -1,6 +1,5 @@
 goog.provide('koc.base.Component');
 goog.require('koc.base.EventTarget');
-goog.require('koc.base.Template');
 goog.require('koc.base.ViewModel');
 
 
@@ -35,7 +34,17 @@ koc.base.Component.prototype.viewModel = koc.base.ViewModel;
  * should be provided by the implementer's template.
  * @protected
  */
-koc.base.Component.prototype.template = koc.base.Template.$getHtmlSync('/lib/kocJS/base/DefaultTemplate.html');
+koc.base.Component.prototype.template = koc.base.Component.$getHtmlSync('/lib/kocJS/base/DefaultTemplate.html');
+
+
+/**
+ * Retrieves the html element, captured in a string using a synchronous http request from the localhost.
+ * This method gets obscure when production mode (in grunt) is enabled.
+ * @expose
+ */
+koc.base.Component.$getHtmlSync = function(url){
+	return $.ajax({type: "GET", url: url, async: false}).responseText;
+};
 
 
 /**

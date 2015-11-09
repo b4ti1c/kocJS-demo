@@ -1,4 +1,4 @@
-goog.provide('app.base.EventTarget');
+goog.provide('koc.base.EventTarget');
 goog.require('goog.events.EventTarget');
 
 
@@ -7,13 +7,13 @@ goog.require('goog.events.EventTarget');
  * @constructor
  * @extends {goog.events.EventTarget}
  */
-app.base.EventTarget = function() {
+koc.base.EventTarget = function() {
     goog.base(this);
 
     if(!this.listeners) this.listeners = [];
     setTimeout(this.bindEvents.bind(this), 50);
 };
-goog.inherits(app.base.EventTarget, goog.events.EventTarget);
+goog.inherits(koc.base.EventTarget, goog.events.EventTarget);
 
 
 /**
@@ -21,14 +21,14 @@ goog.inherits(app.base.EventTarget, goog.events.EventTarget);
  * listeners.
  * @protected
  */
-app.base.EventTarget.prototype.bindEvents = function() {
+koc.base.EventTarget.prototype.bindEvents = function() {
 };
 
 
 /**
  * @override
  */
-app.base.EventTarget.prototype.disposeInternal = function(){
+koc.base.EventTarget.prototype.disposeInternal = function(){
     this.listeners.forEach(goog.events.unlistenByKey);
 
     goog.base(this, 'disposeInternal');

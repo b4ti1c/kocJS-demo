@@ -1,11 +1,11 @@
 goog.provide('app.components.LikeWidget.ViewModel');
-goog.require('app.base.ViewModel');
+goog.require('koc.base.ViewModel');
 
 
 
 /**
  * @constructor
- * @extends {app.base.ViewModel}
+ * @extends {koc.base.ViewModel}
  * 
  * @param {Object} params [description]
  * @param {Element} element
@@ -22,7 +22,7 @@ app.components.LikeWidget.ViewModel = function(params, element){
 	/** @expose */
 	this.Statuses = app.components.LikeWidget.ViewModel.Statuses;
 };
-goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
+goog.inherits(app.components.LikeWidget.ViewModel, koc.base.ViewModel);
 
 
 /**

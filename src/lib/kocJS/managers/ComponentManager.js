@@ -1,14 +1,14 @@
 goog.provide('koc.managers.ComponentManager');
-goog.require('app.base.Manager');
+goog.require('koc.base.Manager');
 
 
 
 /**
  * @constructor
- * @extends {app.base.Manager}
+ * @extends {koc.base.Manager}
  */
 koc.managers.ComponentManager = function(){
 	goog.base(this);
 };
-goog.inherits(koc.managers.ComponentManager, app.base.Manager);
+goog.inherits(koc.managers.ComponentManager, koc.base.Manager);
 goog.addSingletonGetter(koc.managers.ComponentManager);

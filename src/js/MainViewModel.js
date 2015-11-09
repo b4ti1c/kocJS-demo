@@ -1,14 +1,13 @@
 goog.provide('app.MainViewModel');
-goog.require('app.base.MainViewModel');
+goog.require('koc.base.MainViewModel');
 goog.require('app.models.Product');
-goog.require('app.managers.ViewManager');
 goog.require('app.views.ProductList.View');
 
 
 
 /**
  * @constructor
- * @extends {app.base.MainViewModel}
+ * @extends {koc.base.MainViewModel}
  */
 app.MainViewModel = function(){	
 	goog.base(this);
@@ -23,7 +22,7 @@ app.MainViewModel = function(){
 
 	app.vm.goToView(this.productListView);
 };
-goog.inherits(app.MainViewModel, app.base.MainViewModel);
+goog.inherits(app.MainViewModel, koc.base.MainViewModel);
 
 
 /**

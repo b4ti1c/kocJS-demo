@@ -1,13 +1,13 @@
-goog.provide('app.base.Model');
-goog.require('app.base.EventTarget');
+goog.provide('koc.base.Model');
+goog.require('koc.base.EventTarget');
 
 
 
 /**
  * @constructor
- * @extends {app.base.EventTarget}
+ * @extends {koc.base.EventTarget}
  */
-app.base.Model = function(){
+koc.base.Model = function(){
 	goog.base(this);
 };
-goog.inherits(app.base.Model, app.base.EventTarget);
+goog.inherits(koc.base.Model, koc.base.EventTarget);

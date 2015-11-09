@@ -1,24 +1,24 @@
-goog.provide('app.base.View');
-goog.require('app.base.EventTarget');
-goog.require('app.base.Template');
+goog.provide('koc.base.View');
+goog.require('koc.base.EventTarget');
+goog.require('koc.base.Template');
 
 
 
 /**
  * @constructor
- * @extends {app.base.EventTarget}
+ * @extends {koc.base.EventTarget}
  */
-app.base.View = function(){
+koc.base.View = function(){
 	goog.base(this);
 };
-goog.inherits(app.base.View, app.base.EventTarget);
+goog.inherits(koc.base.View, koc.base.EventTarget);
 
 
 /**
  * The name of the element in DOM and should be overriden by the implementer
  * @protected
  */
-app.base.View.prototype.name = 'default-view';
+koc.base.View.prototype.name = 'default-view';
 
 
 /**
@@ -26,7 +26,7 @@ app.base.View.prototype.name = 'default-view';
  * be provided by the implementer's template.
  * @protected
  */
-app.base.View.prototype.template = app.base.Template.$getHtmlSync('/lib/kocJS/base/DefaultTemplate.html');
+koc.base.View.prototype.template = koc.base.Template.$getHtmlSync('/lib/kocJS/base/DefaultTemplate.html');
 
 
 /**
@@ -34,18 +34,18 @@ app.base.View.prototype.template = app.base.Template.$getHtmlSync('/lib/kocJS/ba
  * corresponding element is rendered in DOM
  * 
  * @param  {Element} elementInfo [description]
- * @param  {app.base.View} viewModel   [description]
+ * @param  {koc.base.View} viewModel   [description]
  */
-app.base.View.prototype.afterRender = function(elementInfo, viewModel){
+koc.base.View.prototype.afterRender = function(elementInfo, viewModel){
 	viewModel.$element = $(elementInfo[0]);
 };
 
 
-app.base.View.prototype.getName = function(){
+koc.base.View.prototype.getName = function(){
 	return this.name;
 };
 
 
-app.base.View.prototype.getTemplate = function(){
+koc.base.View.prototype.getTemplate = function(){
 	return this.template;
 };

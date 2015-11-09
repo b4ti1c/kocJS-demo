@@ -1,16 +1,17 @@
-goog.provide('app.base.MainViewModel');
-goog.require('app.base.ViewModel');
+goog.provide('koc.base.MainViewModel');
+goog.require('koc.base.ViewModel');
+goog.require('koc.managers.ViewManager');
 
 
 
 /**
  * @constructor
- * @extends {app.base.ViewModel}
+ * @extends {koc.base.ViewModel}
  */
-app.base.MainViewModel = function(){	
+koc.base.MainViewModel = function(){	
 	goog.base(this);
 
-	this['vm'] = app.vm;
+	this['vm'] = koc.managers.ViewManager.getInstance();
 };
-goog.inherits(app.base.MainViewModel, app.base.ViewModel);
+goog.inherits(koc.base.MainViewModel, koc.base.ViewModel);
 

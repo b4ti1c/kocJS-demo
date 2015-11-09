@@ -1,13 +1,13 @@
-goog.provide('app.managers.ViewManager');
-goog.require('app.base.Manager');
+goog.provide('koc.managers.ViewManager');
+goog.require('koc.base.Manager');
 
 
 
 /**
  * @constructor
- * @extends {app.base.Manager}
+ * @extends {koc.base.Manager}
  */
-app.managers.ViewManager = function(){
+koc.managers.ViewManager = function(){
 	this.history = [];
 	this.templates = {};
 
@@ -44,14 +44,14 @@ app.managers.ViewManager = function(){
 
 	goog.base(this);
 };
-goog.inherits(app.managers.ViewManager, app.base.Manager);
-goog.addSingletonGetter(app.managers.ViewManager);
+goog.inherits(koc.managers.ViewManager, koc.base.Manager);
+goog.addSingletonGetter(koc.managers.ViewManager);
 
 
 /**
  * @protected
  */
-app.managers.ViewManager.prototype._createStringTemplateEngine = function(templateEngine, templates){
+koc.managers.ViewManager.prototype._createStringTemplateEngine = function(templateEngine, templates){
 	templateEngine['makeTemplateSource'] = function(template) {
     	return new ko.templateSources.stringTemplate(template, templates);
 	};
@@ -64,27 +64,27 @@ app.managers.ViewManager.prototype._createStringTemplateEngine = function(templa
  * 
  * @param {string=} templates
  */
-app.managers.ViewManager.prototype.prepareTemplateEngine = function(templates){
+koc.managers.ViewManager.prototype.prepareTemplateEngine = function(templates){
 	ko.setTemplateEngine(this._createStringTemplateEngine(new ko.nativeTemplateEngine(), templates || this.templates));
 };
 
 
 /**
  * 
- * @param {app.base.View} view 
+ * @param {koc.base.View} view 
  */
-app.managers.ViewManager.prototype.addTemplate = function(view){
+koc.managers.ViewManager.prototype.addTemplate = function(view){
 	this.templates[view.getName()] = view.getTemplate();
 };
 
 
 /**
  * 
- * @param  {app.base.View} view       New view to show
+ * @param  {koc.base.View} view       New view to show
  * @param  {?boolean=} keepInHistory  True or null if view needs to be kept in history, otherwise leave empty
  * @param  {?Function=} callback Callback function to execute right after making the switch to the new view
  */
-app.managers.ViewManager.prototype.goToView = function(view, keepInHistory, callback){
+koc.managers.ViewManager.prototype.goToView = function(view, keepInHistory, callback){
 	keepInHistory = keepInHistory || true;
 	if(keepInHistory) this.history.push(this.currentView());
 
@@ -98,7 +98,7 @@ app.managers.ViewManager.prototype.goToView = function(view, keepInHistory, call
 };
 
 
-app.managers.ViewManager.prototype.goBack = function(){
+koc.managers.ViewManager.prototype.goBack = function(){
 	if(this.history.length < 2) return;
 
 	var oldView = this.history.pop();

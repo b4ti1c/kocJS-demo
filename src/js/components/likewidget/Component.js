@@ -1,18 +1,18 @@
 goog.provide('app.components.LikeWidget.Component');
-goog.require('app.base.Component');
+goog.require('koc.base.Component');
 goog.require('app.components.LikeWidget.ViewModel');
 
  
 
 /**
  * @constructor
- * @extends {app.base.Component}
+ * @extends {koc.base.Component}
  * 
  */
 app.components.LikeWidget.Component = function(){
 	goog.base(this);
 };
-goog.inherits(app.components.LikeWidget.Component, app.base.Component);
+goog.inherits(app.components.LikeWidget.Component, koc.base.Component);
 
 
 /**
@@ -30,4 +30,4 @@ app.components.LikeWidget.Component.prototype.viewModel = app.components.LikeWid
 /**
  * @override
  */
-app.components.LikeWidget.Component.prototype.template = app.base.Template.$getHtmlSync('/js/components/likewidget/LikeWidget.html');
+app.components.LikeWidget.Component.prototype.template = koc.base.Template.$getHtmlSync('/js/components/likewidget/LikeWidget.html');

@@ -1,33 +1,33 @@
-goog.provide('app.base.Component');
-goog.require('app.base.EventTarget');
-goog.require('app.base.Template');
-goog.require('app.base.ViewModel');
+goog.provide('koc.base.Component');
+goog.require('koc.base.EventTarget');
+goog.require('koc.base.Template');
+goog.require('koc.base.ViewModel');
 
 
 
 /**
  * @constructor
- * @extends {app.base.EventTarget}
+ * @extends {koc.base.EventTarget}
  */
-app.base.Component = function() {
+koc.base.Component = function() {
     goog.base(this);
     this.register();
 };
-goog.inherits(app.base.Component, app.base.EventTarget);
+goog.inherits(koc.base.Component, koc.base.EventTarget);
 
 
 /**
  * The name of the element in DOM and should be overriden by the implementer
  * @protected
  */
-app.base.Component.prototype.name = 'default-component';
+koc.base.Component.prototype.name = 'default-component';
 
 
 /**
  * ViewModel that will represent the element in DOM. Should be overriden by the implementer
  * @protected
  */
-app.base.Component.prototype.viewModel = app.base.ViewModel;
+koc.base.Component.prototype.viewModel = koc.base.ViewModel;
 
 
 /**
@@ -35,14 +35,14 @@ app.base.Component.prototype.viewModel = app.base.ViewModel;
  * should be provided by the implementer's template.
  * @protected
  */
-app.base.Component.prototype.template = app.base.Template.$getHtmlSync('/lib/kocJS/base/DefaultTemplate.html');
+koc.base.Component.prototype.template = koc.base.Template.$getHtmlSync('/lib/kocJS/base/DefaultTemplate.html');
 
 
 /**
  * 
  * @protected
  */
-app.base.Component.prototype.register = function(){
+koc.base.Component.prototype.register = function(){
 	var that = this;
 	ko.components.register(this.name, {
 		'viewModel': {

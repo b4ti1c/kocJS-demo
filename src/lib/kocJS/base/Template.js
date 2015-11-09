@@ -1,17 +1,17 @@
-goog.provide('app.base.Template');
-goog.require('app.base.EventTarget');
+goog.provide('koc.base.Template');
+goog.require('koc.base.EventTarget');
 
 
 
 /**
  * Base class for all markafoni templates.
- * @extends {app.base.EventTarget}
+ * @extends {koc.base.EventTarget}
  * @constructor
  */
-app.base.Template = function() {
+koc.base.Template = function() {
 	goog.base(this);
 };
-goog.inherits(app.base.Template, app.base.EventTarget);
+goog.inherits(koc.base.Template, koc.base.EventTarget);
 
 
 /**
@@ -19,6 +19,6 @@ goog.inherits(app.base.Template, app.base.EventTarget);
  * This method gets obscure when production mode (in grunt) is enabled.
  * @expose
  */
-app.base.Template.$getHtmlSync = function(url){
+koc.base.Template.$getHtmlSync = function(url){
 	return $.ajax({type: "GET", url: url, async: false}).responseText;
 };

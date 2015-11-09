@@ -1,16 +1,16 @@
-goog.provide('app.base.ViewModel');
-goog.require('app.base.EventTarget');
+goog.provide('koc.base.ViewModel');
+goog.require('koc.base.EventTarget');
 
 
 
 /**
  * @constructor
- * @extends {app.base.EventTarget}
+ * @extends {koc.base.EventTarget}
  *
  * @param {Object=} params [description]
  * @param {Element=} element
  */
-app.base.ViewModel = function(params, element) {
+koc.base.ViewModel = function(params, element) {
     params = params || {};
     Object.keys(params).forEach(function(key){
     	this[key] = params[key];
@@ -24,4 +24,4 @@ app.base.ViewModel = function(params, element) {
 
 	goog.base(this);
 };
-goog.inherits(app.base.ViewModel, app.base.EventTarget);
+goog.inherits(koc.base.ViewModel, koc.base.EventTarget);

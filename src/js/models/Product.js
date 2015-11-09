@@ -1,12 +1,12 @@
 goog.provide('app.models.Product');
-goog.require('app.base.Model');
+goog.require('koc.base.Model');
 
 
 
 /**
  * 
  * @constructor
- * @extends {app.base.Model}
+ * @extends {koc.base.Model}
  *
  * @param {string} name [description]
  * @param {string=} rating [description]
@@ -20,4 +20,4 @@ app.models.Product = function(name, rating) {
 	
 	goog.base(this);
 };
-goog.inherits(app.models.Product, app.base.Model);
+goog.inherits(app.models.Product, koc.base.Model);

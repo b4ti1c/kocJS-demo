@@ -1,5 +1,5 @@
 # koçJS Demo
-Demo of the Boilerplate for using Google Closure Compiler with KnockoutJS
+A boilerplate for using koçJS, that is Google Closure Compiler with KnockoutJS.
 
 ## Installation
 

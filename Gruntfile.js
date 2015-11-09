@@ -171,11 +171,6 @@ module.exports = function(grunt) {
                 {src: 'build/lib.js', dest: 'dist/lib.js'}
             ]
         },
-        jsbuild: {
-            files: [
-                {expand: false, cwd: 'build/', src: 'compiled.js', dest: 'dist/'}
-            ]
-        },
         jsdeps: {
             files: [
                 {src: 'build/deps.js', dest: 'dist/deps.js'}

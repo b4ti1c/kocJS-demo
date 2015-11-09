@@ -23,7 +23,7 @@ koc.managers.ViewManager = function(){
 
 	ko.utils.extend(ko.templateSources.stringTemplate.prototype, {
 	    data: function(key, value) {
-	        console.log("data", key, value, this.templateName);
+	        //console.log("data", key, value, this.templateName);
 	        this.templates._data = this.templates._data || {};
 	        this.templates._data[this.templateName] = this.templates._data[this.templateName] || {};
 	        
@@ -34,7 +34,7 @@ koc.managers.ViewManager = function(){
 	        this.templates._data[this.templateName][key] = value;
 	    },
 	    text: function(value) {
-	        console.log("text", value, this.templateName)
+	        //console.log("text", value, this.templateName)
 	        if (arguments.length === 0) {
 	           return this.templates[this.templateName];
 	        } 

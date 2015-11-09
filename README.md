@@ -1,4 +1,4 @@
-# gcc-knockout
+# koçJS
 Boilerplate for using Google Closure Compiler with KnockoutJS
 
 ## Installation

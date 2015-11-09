@@ -35,7 +35,7 @@ app.base.Component.prototype.viewModel = app.base.ViewModel;
  * should be provided by the implementer's template.
  * @protected
  */
-app.base.Component.prototype.template = app.base.Template.$getHtmlSync('/lib/GeckoJS/base/DefaultTemplate.html');
+app.base.Component.prototype.template = app.base.Template.$getHtmlSync('/lib/kocJS/base/DefaultTemplate.html');
 
 
 /**

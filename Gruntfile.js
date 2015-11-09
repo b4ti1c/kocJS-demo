@@ -1,6 +1,6 @@
 
 module.exports = function(grunt) {
-    var styles = grunt.file.expand(['src/**/*.css', '!src/library/tartJS/**/*']).map(function(file) {
+    var styles = grunt.file.expand(['src/**/*.css']).map(function(file) {
         file = file.slice(4);
         return '<link rel="stylesheet" type="text/css" href="' + file + '" /> \n\t';
     }).join('');
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
         },
         lib: {
             files: {
-                'build/lib.js': ['src/lib/**/*.js', '!src/lib/GeckoJS/**/*']
+                'build/lib.js': ['src/lib/**/*.js', '!src/lib/kocJS/**/*']
             }
         }
     };

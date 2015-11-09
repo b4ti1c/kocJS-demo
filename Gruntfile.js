@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         },
         main: {
             src: ['closure-library/third_party', 'src/'],
-            dest: 'build/compiled.js'
+            dest: 'build/pre-compiled.js'
         }
 	};
 
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
             options: {
                 separator: ';\n\n'
             },
-            src: ['build/lib.js', 'build/compiled.js'],
+            src: ['build/lib.js', 'build/pre-compiled.js'],
             dest: 'build/compiled.js'
         },
         css: {
@@ -151,7 +151,7 @@ module.exports = function(grunt) {
         },
         closureBuilder: {
             src: ['src/**/*.js', 'src/js/**/*.html'],
-            dest: 'build/compiled.js',
+            dest: 'build/pre-compiled.js',
             options: {
                 tasks: ['closureBuilder']
             }

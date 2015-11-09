@@ -18,6 +18,9 @@ app.components.LikeWidget.ViewModel = function(params, element){
 
     /** @expose */
 	this.commentary = ko.observable('Click Me!');
+
+	/** @expose */
+	this.Statuses = app.components.LikeWidget.ViewModel.Statuses;
 };
 goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
 
@@ -58,7 +61,9 @@ app.components.LikeWidget.ViewModel.Events = {
  * 
  * @enum {string}
  */
-app.components.LikeWidget.ViewModel.Status = {
+app.components.LikeWidget.ViewModel.Statuses = {
+	/** @expose */
     LIKE: 'like',
+    /** @expose */
     DISLIKE: 'dislike',
 };

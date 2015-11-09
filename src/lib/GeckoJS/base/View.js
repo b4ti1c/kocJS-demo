@@ -26,7 +26,7 @@ app.base.View.prototype.name = 'default-view';
  * be provided by the implementer's template.
  * @protected
  */
-app.base.View.prototype.template = app.base.Template.$getHtmlSync('/js/base/DefaultTemplate.html');
+app.base.View.prototype.template = app.base.Template.$getHtmlSync('/lib/GeckoJS/base/DefaultTemplate.html');
 
 
 /**

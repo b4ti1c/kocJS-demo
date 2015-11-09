@@ -1,5 +1,5 @@
 goog.provide('app.MainViewModel');
-goog.require('app.base.ViewModel');
+goog.require('app.base.MainViewModel');
 goog.require('app.models.Product');
 goog.require('app.managers.ViewManager');
 goog.require('app.views.ProductList.View');
@@ -8,12 +8,10 @@ goog.require('app.views.ProductList.View');
 
 /**
  * @constructor
- * @extends {app.base.ViewModel}
+ * @extends {app.base.MainViewModel}
  */
 app.MainViewModel = function(){	
 	goog.base(this);
-
-	this['vm'] = app.vm;
 
 	this.products = ko.observableArray([
         new app.models.Product('Garlic bread'),
@@ -25,7 +23,7 @@ app.MainViewModel = function(){
 
 	app.vm.goToView(this.productListView);
 };
-goog.inherits(app.MainViewModel, app.base.ViewModel);
+goog.inherits(app.MainViewModel, app.base.MainViewModel);
 
 
 /**

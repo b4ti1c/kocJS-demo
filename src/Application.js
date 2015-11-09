@@ -12,9 +12,10 @@ goog.require('app.MainViewModel');
  * @constructor
  */
 app.Application = function() {
-	app.vf = app.factories.ViewFactory.getInstance();
 	app.vm = app.managers.ViewManager.getInstance();
 	app.cm = app.managers.ComponentManager.getInstance();	
+
+	app.vf = app.factories.ViewFactory.getInstance();	
 	 
 	ko.applyBindings(new app.MainViewModel());
 };

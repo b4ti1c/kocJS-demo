@@ -84,7 +84,7 @@ module.exports = function(grunt) {
         },
         lib: {
             files: {
-                'build/lib.js': ['src/lib/**/*.js']
+                'build/lib.js': ['src/lib/**/*.js', '!src/lib/GeckoJS/**/*']
             }
         }
     };

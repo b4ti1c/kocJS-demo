@@ -29,8 +29,8 @@ goog.inherits(app.components.LikeWidget.ViewModel, app.base.ViewModel);
 app.components.LikeWidget.ViewModel.prototype.likeStatus = function(status) { 
     this.value(status); 
     this.dispatchEvent({
-        type: app.components.LikeWidget.ViewModel.EventType.DECISION,
-        value: status
+        type: app.components.LikeWidget.ViewModel.Events.DECISION,
+        likeStatus: status
     });
 };
 
@@ -49,7 +49,7 @@ app.components.LikeWidget.ViewModel.prototype.comment = function(str){
  * 
  * @enum {string}
  */
-app.components.LikeWidget.ViewModel.EventType = {
+app.components.LikeWidget.ViewModel.Events = {
     DECISION: 'like-decision',
 };
 

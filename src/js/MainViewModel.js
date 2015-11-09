@@ -33,7 +33,7 @@ goog.inherits(app.MainViewModel, app.base.ViewModel);
  * @override
  */
 app.MainViewModel.prototype.bindEvents = function(){	
-	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.EventType.DECISION, this.onLikeDecision, false, this));
+	this.listeners.push(goog.events.listen(this, app.components.LikeWidget.ViewModel.Events.DECISION, this.onLikeDecision, false, this));
 };
 
 

@@ -4,7 +4,6 @@ html, body, view {
     width: 100%;
     position: absolute;
     background: #ffffff;
-    overflow: hidden;
 }
 
 body {

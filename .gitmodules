@@ -2,3 +2,6 @@
 	path = closure-library
 	url = https://github.com/batilc1/closure-library
 	ignore = all
+[submodule "src/lib/kocJS"]
+	path = src/lib/kocJS
+	url = https://github.com/batilc1/kocJS

@@ -1,10 +1,10 @@
-# koçJS
-Boilerplate for using Google Closure Compiler with KnockoutJS
+# koçJS Demo
+Demo of the Boilerplate for using Google Closure Compiler with KnockoutJS
 
 ## Installation
 
-    git clone --recursive https://github.com/batilc1/kocJS.git
-    cd kocJS
+    git clone --recursive https://github.com/batilc1/kocJS-demo.git
+    cd kocJS-demo
     npm install
 
 ## Building for Development
@@ -17,7 +17,7 @@ Then just type
     
     grunt test
 
-And the project files will be symlinked under `kocJS/dist/` folder. Now run a server at that folder and everything should be good to go. 
+And the project files will be symlinked under `kocJS-demo/dist/` folder. Now run a server at that folder and everything should be good to go. 
 
     cd dist/
     http-server
